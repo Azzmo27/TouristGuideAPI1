@@ -10,7 +10,7 @@ import com.example.touristguideapi.service.TouristService;
 import java.util.List;
 
 @Controller
-
+@RequestMapping("/attractions")
 public class TouristController {
 
     private final TouristService touristService;
@@ -24,6 +24,7 @@ public class TouristController {
         touristService.addAttraction(attraction);
         return new ResponseEntity<>(attraction, HttpStatus.CREATED);
     }
+
 
     @GetMapping("/attractions")
     public ResponseEntity<List<TouristAttractions>> getAllAttractions() {
